@@ -14,3 +14,8 @@ function tap() {
         document.getElementById("bpmDisplay").textContent = `BPM: ${bpm}`;
     }
 }
+
+function reset() {
+    tapTimes = [];
+    document.getElementById("bpmDisplay").textContent = "BPM: ---";
+}
