@@ -19,3 +19,21 @@ function reset() {
     tapTimes = [];
     document.getElementById("bpmDisplay").textContent = "BPM: ---";
 }
+
+function playRandomSong() {
+    const songs = [
+        { name: "Bops goin Brazy", bpm: 120 },
+        // Add more songs as needed
+    ];
+
+    const randomIndex = Math.floor(Math.random() * songs.length);
+    const randomSong = songs[randomIndex];
+
+    // Set currentSongBPM for comparison in the tap function
+    currentSongBPM = randomSong.bpm;
+
+    // Play the selected song
+    const audioPlayer = document.getElementById("audioPlayer");
+    audioPlayer.src = `../songs/${randomSong.name}.mp3`; // Adjust the path here
+    audioPlayer.play();
+}
